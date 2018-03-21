@@ -1,0 +1,55 @@
+article(itemscope, itemtype="http://schema.org/Person", ng-app="resume")
+  header.header(role="banner")
+    hgroup
+      img.headshot(itemprop="image", src="https://i1.sndcdn.com/avatars-000070510214-qwx6xo-t500x500.jpg", alt="Dan Wilt")  
+      h1(itemprop="name") Dan Wilt
+      h2.user-description(itemprop="description") A contract front-end web developer for agencies looking to shape the web.
+    address.contact-details    
+      a.telephone(href="tel:+1-610-694-0883", itemprop="telephone")
+        span.content 610.694.0883
+      div.org(itemscope, itemtype="http://schema.org/Organization")
+        a.website(href="http://www.64interactive.com", itemprop="url")
+          span(itemprop="name") 64 Interactive, LLC
+        div.address(itemscope, itemprop="address", itemtype="http://schema.org/PostalAddress")
+          div(itemprop="streetAddress") 699 14th Street, Unit 600
+          span(itemprop="addressLocality") San Diego 
+          abbr(title="California" itemprop="addressRegion") CA 
+          span(itemprop="postalCode") 92101
+      a.email(href="mailto:dwilt4rville@gmail.com", itemprop="email")
+        span.content dwilt4rville@gmail.com
+  div.content
+    section.languages(ng-controller="LanguagesCtrl")
+      header
+        h1.languages-heading Languages
+      ul.languages-list
+        li(ng-repeat="language in languages", ng-bind="language")
+
+    section.tools(ng-controller="ToolsCtrl")
+      header
+        h1.tools-heading Tools
+      ul.tool-types-list
+        li(ng-repeat="type in toolTypes")
+          h2.tool-type-heading(ng-bind="type.name")
+          ul.tools-list
+           li(ng-repeat="tool in type.tools", ng-bind="tool")
+           
+    section.clients(ng-controller="ClientsCtrl")
+      header
+        h1.clients-heading Clients
+      ol.clients-list
+        li.client(itemscope, ng-repeat="client in clients", itemtype="http://schema.org/Organization")
+          h2.client-name
+            span(itemprop="name", ng-bind="client.name")
+            a.client-link(itemprop="url", ng-href="{{ client.url }}", title="{{ client.name }}'s website", ng-bind="client.url")
+              span.text
+          div.client-time-worked-at
+            time(ng-bind="client.startDate")
+            |  - 
+            time(ng-bind="client.endDate")
+          p(ng-bind="client.service")
+          ul
+            li(ng-repeat="highlight in client.highlights", ng-bind="highlight")
+          blockquote.client-testimonial(ng-if="client.testimonial")
+            p(ng-bind="client.testimonial.content")
+            footer(ng-bind="client.testimonial.author.name + ', ' + client.testimonial.author.jobTitle")
+            
