@@ -1,43 +1,44 @@
 article(itemscope, itemtype="http://schema.org/Person", ng-app="resume")
   header.header(role="banner")
     hgroup
-      img.headshot(itemprop="image", src="https://i1.sndcdn.com/avatars-000070510214-qwx6xo-t500x500.jpg", alt="Dan Wilt")  
-      h1(itemprop="name") Dan Wilt
-      h2.user-description(itemprop="description") A contract front-end web developer for agencies looking to shape the web.
+      img.headshot(itemprop="image", src="https://instagram.fsjc1-3.fna.fbcdn.net/vp/376b1f99d370cd1fa677095dcb4b6870/5B44B7AD/t51.2885-15/e35/29404239_432793320493628_6858854933949579264_n.jpg", alt="Dan Wilt")  
+      h1(itemprop="name") Felipe Angeles
+      h2.user-description(itemprop="description") This how can leared this together
     address.contact-details    
-      a.telephone(href="tel:+1-610-694-0883", itemprop="telephone")
-        span.content 610.694.0883
+      a.telephone(href="tel:+1-414-596-9517", itemprop="telephone")
+        span.content 415-596-9517
       div.org(itemscope, itemtype="http://schema.org/Organization")
-        a.website(href="http://www.64interactive.com", itemprop="url")
-          span(itemprop="name") 64 Interactive, LLC
+        a.website(href="", itemprop="url")
+          span(itemprop="name") Felipe Angeles Company 
         div.address(itemscope, itemprop="address", itemtype="http://schema.org/PostalAddress")
-          div(itemprop="streetAddress") 699 14th Street, Unit 600
-          span(itemprop="addressLocality") San Diego 
+          div(itemprop="streetAddress") 49 Holyoke st 
+          span(itemprop="addressLocality") San Francisco 
           abbr(title="California" itemprop="addressRegion") CA 
-          span(itemprop="postalCode") 92101
-      a.email(href="mailto:dwilt4rville@gmail.com", itemprop="email")
-        span.content dwilt4rville@gmail.com
+          span(itemprop="postalCode") 94134 
+      a.email(href="felipeangeles134@gmail.com", itemprop="email")
+        span.content felipeangeles134@gmail.com
   div.content
     section.languages(ng-controller="LanguagesCtrl")
       header
         h1.languages-heading Languages
       ul.languages-list
-        li(ng-repeat="language in languages", ng-bind="language")
+        li(ng-repeat="", ng-bind="language")
 
     section.tools(ng-controller="ToolsCtrl")
       header
         h1.tools-heading Tools
       ul.tool-types-list
-        li(ng-repeat="type in toolTypes")
+        li(ng-repeat="tools")
           h2.tool-type-heading(ng-bind="type.name")
           ul.tools-list
            li(ng-repeat="tool in type.tools", ng-bind="tool")
            
     section.clients(ng-controller="ClientsCtrl")
       header
-        h1.clients-heading Clients
+        h1.clients-heading School
       ol.clients-list
-        li.client(itemscope, ng-repeat="client in clients", itemtype="http://schema.org/Organization")
+      
+        li.client(itemscope, ng-repeat="", itemtype="http://schema.org/Organization")
           h2.client-name
             span(itemprop="name", ng-bind="client.name")
             a.client-link(itemprop="url", ng-href="{{ client.url }}", title="{{ client.name }}'s website", ng-bind="client.url")
